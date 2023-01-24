@@ -5,11 +5,9 @@ import Link from "next/link";
 import Background from "../../public/background.jpg";
 import { Event, Dinner } from "typings";
 import { fetchEvent } from "@/utils/fetchEvents";
-import { fetchDinner } from "@/utils/fetchDinners";
 
 type Props = {
   events: Event[];
-  dinners: Dinner[];
 };
 
 export default function Home({ events }: Props) {
@@ -30,15 +28,16 @@ export default function Home({ events }: Props) {
 
           <div className="flex md:flex-row w-screen justify-center flex-wrap items-center">
             {events.map((event) => (
-              <>
-                <div className="flex flex-col items-center bg-white text-black m-5 p-2 shadow-2xl rounded-xl w-36 md:w-50 justify-between md:h-40 text-center">
-                  <div className="text-[#FF6961] flex flex-col items-center">
-                    <h1 className="text-xl">{event.date.substring(5, 7)}</h1>
-                    <h1>{+event.date.substring(8, 10)}</h1>
-                  </div>
-                  <div className="">{event.name}</div>
+              <div
+                key={event._id}
+                className="flex flex-col items-center bg-white text-black m-5 p-2 shadow-2xl rounded-xl w-36 md:w-50 justify-between md:h-40 text-center"
+              >
+                <div className="text-[#FF6961] flex flex-col items-center">
+                  <h1 className="text-xl">{event.date.substring(5, 7)}</h1>
+                  <h1>{+event.date.substring(8, 10)}</h1>
                 </div>
-              </>
+                <div className="">{event.name}</div>
+              </div>
             ))}
           </div>
 
@@ -78,7 +77,6 @@ export default function Home({ events }: Props) {
 }
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const dinners: Dinner[] = await fetchDinner();
   const events: Event[] = await fetchEvent();
 
   return {
