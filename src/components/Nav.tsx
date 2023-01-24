@@ -38,7 +38,7 @@ function Nav() {
           }
         >
           <Link href="/Calendar">Calendar</Link>
-          <Link href="/Home">Home</Link>
+          <Link href="/">Home</Link>
           <Link href="/Gallery">Gallery</Link>
           <Link href="/Contact">Contact</Link>
         </div>
