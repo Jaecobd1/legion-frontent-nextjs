@@ -27,7 +27,7 @@ export default function Home({ events }: Props) {
           <h1 className="md:text-2xl text-xl">Upcoming Events</h1>
 
           <div className="flex md:flex-row w-screen justify-center flex-wrap items-center">
-            {events.map((event) => (
+            {events?.map((event) => (
               <div
                 key={event._id}
                 className="flex flex-col items-center bg-white text-black m-5 p-2 shadow-2xl rounded-xl w-36 md:w-50 justify-between md:h-40 text-center"
