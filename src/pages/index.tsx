@@ -48,7 +48,7 @@ export default function Home({ events }: Props) {
               <b>Legionnaires</b>
             </li>
             <li>
-              <b>Son's of the American Legion</b>
+              <b>Son&aposs of the American Legion</b>
             </li>
             <li>
               <b>Auxiliary</b>
