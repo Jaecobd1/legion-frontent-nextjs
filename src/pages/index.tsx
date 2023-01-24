@@ -30,13 +30,13 @@ export default function Home({ events }: Props) {
             {events?.map((event) => (
               <div
                 key={event._id}
-                className="flex flex-col items-center bg-white text-black m-5 p-2 shadow-2xl rounded-xl w-36 md:w-50 justify-between md:h-40 text-center"
+                className="flex flex-col items-center bg-white text-black m-5 p-2 shadow-2xl rounded-xl w-28 h-28 md:w-50 justify-between md:h-40 text-center"
               >
-                <div className="text-[#FF6961] flex flex-col items-center">
+                <div className="text-[#FF6961] flex flex-col items-center ">
                   <h1 className="text-xl">{event.date.substring(5, 7)}</h1>
                   <h1>{+event.date.substring(8, 10)}</h1>
                 </div>
-                <div className="">{event.name}</div>
+                <div className="text-sm md:text-xl">{event.name}</div>
               </div>
             ))}
           </div>
